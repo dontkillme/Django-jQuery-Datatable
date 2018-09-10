@@ -1,0 +1,25 @@
+{% spaceless %}
+{% load staticfiles %}
+<html>
+<head>
+  <script src="{% static 'jquery-1.12.4.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'datatables.css' %}"/>
+  <script type="text/javascript" src="{% static 'datatables.js' %}"></script>
+  <script>
+  $.ajaxSetup({ data: { csrfmiddlewaretoken: "{{csrf_token}}"} });
+  </script>
+  <script src="{% static 'main.js' %}"></script>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          counter
+        </th>
+      </tr>
+    </thead>
+  </table>
+</body>
+</html>
+{% endspaceless %}
